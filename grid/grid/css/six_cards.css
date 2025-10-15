@@ -1,0 +1,108 @@
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.six-cards-wrapper {
+    display: contents;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: var(--spacing-lg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-green);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-olive), var(--color-blacck));
+}
+
+.card_avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+    border: 3px solid var(--color-olivee);
+    background-color: var(--color-light-grey);
+    padding: 8px;
+}
+
+.card_image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card_image {
+    transform: scale(1.05);
+}
+
+.card_feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease;
+}
+
+.card_feature:hover {
+    background-color: var(--color-green);
+}
+
+.card_check-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.card_feature p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-dark-grey);
+}
+
+.card_button {
+    width: 100%;
+    margin: var(--spacing-md) 0 0;
+    padding: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+    
+    .card {
+        padding: var(--spacing-md);
+    }
+}

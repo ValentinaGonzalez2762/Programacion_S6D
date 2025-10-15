@@ -1,0 +1,44 @@
+.full_bleed {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--color-lavander) 0%, var(--color-cream) 100%);
+}
+
+.full_bleed p {
+    max-width: 1200px;
+    margin: 0 auto var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.full_bleed img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    display: block;
+    margin: var(--spacing-lg) 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Efectos de hover para imágenes */
+.full_bleed img:hover {
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+}
+
+/* Mejoras de responsividad */
+@media (max-width: 768px) {
+    .full_bleed {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .full_bleed p {
+        padding: 0 var(--spacing-md);
+        font-size: 1rem;
+    }
+}
